@@ -10,8 +10,10 @@ body {
   top: 110px;
 }
 
-#pass_input {
+#k_input {
   top: 185px;
+  color: transparent;
+  background-color: transparent;
 }
 
 .text_input {
@@ -35,6 +37,12 @@ body {
   left: 670px;
   width: 340px;
   height: 40px;
+}
+
+#k_dummy {
+	padding-left: 5px;
+	top: 200px;
+	background-color: transparent;
 }
 
 .cover {
