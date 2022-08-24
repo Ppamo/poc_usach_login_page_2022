@@ -9,7 +9,7 @@ function page_onload(){
 	const parameters = new URLSearchParams(queryString);
 	const value = parameters.get('theme');
 	if (value == "default") {
-		document.getElementById("cover").style.opacity = 0;
+		document.getElementById("cover").style.visibility = 'hidden';
 	}
 }
 
