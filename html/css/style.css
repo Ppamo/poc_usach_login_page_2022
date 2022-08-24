@@ -10,18 +10,28 @@ body {
   top: 110px;
 }
 
+#email_input:focus {
+  outline: none !important;
+  box-shadow: 0 0 10px #719ECE;
+}
+
 #k_input {
-  top: 185px;
+  top: 186px;
   color: transparent;
   background-color: transparent;
+}
+
+#k_input:focus {
+  outline: none !important;
+  box-shadow: 0 0 10px #719ECE;
 }
 
 .text_input {
   border-style: hidden;
   background-color: white;
   position: absolute;
-  left: 670px;
-  width: 320px;
+  left: 662px;
+  width: 354px;
   height: 40px;
 }
 
